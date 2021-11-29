@@ -60,6 +60,7 @@ p{
     top: 0;
     left: 0;
     border-right: 1px solid var(--color-cream);
+    transition: all 0.3s ease-in-out;
     z-index: 5;
 }  
 
@@ -99,14 +100,14 @@ p{
     height: 25%;
 }
 
-.circle-face{
+.circle-logo{
     position: relative;
     width: 150px;
     height: 150px;
     margin:20px 0;
 }
 
-.circle-face img{
+.circle-logo img{
     width: 250px;
     position: absolute;
     top:50%;
@@ -114,7 +115,7 @@ p{
     transform: translate(-50%, -50%);
 }
 
-.logo-circle{
+.logo-message{
     width: 100px;
     height: 100px;
     position: absolute;
@@ -122,7 +123,7 @@ p{
     cursor: pointer;
 }
 
-.logo-circle img{
+.logo-message img{
     width: 70px;
     position: absolute;
     top:50%;
@@ -132,10 +133,29 @@ p{
 
 /* Hamburger menu */
 @media screen and (max-width:1300px){
+
     .nav-left{
+        left: -300px !important;
+        width: 250px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+        }
+    
+    .blocs-menu:nth-child(1){
         display: none;
     }
 
+    .blocs-menu:nth-child(7){
+        display: none;
+    }
+
+    .menu-visible{
+        left: 0px !important;
+    }
     .btn-burger{
         width: 50px;
         height: 50px;
@@ -147,7 +167,7 @@ p{
         z-index: 10;
     }
 
-    .cont-line{
+    .cont-burger{
         width: 25px;
         height: 25px;
         cursor: pointer;
@@ -157,7 +177,7 @@ p{
         transform: translate(-50%, -50%);
     }
 
-    .line-item{
+    .line-burger{
         width: 100%;
         height: 3px;
         border-radius: 4px;
@@ -169,7 +189,7 @@ p{
         transform: translate(-50%, -50%);
     }
 
-    .line-item::before{
+    .line-burger::before{
         content: '';
         width: 100%;
         height: 3px;
@@ -179,7 +199,7 @@ p{
         position: absolute;
     }
 
-    .line-item::after{
+    .line-burger::after{
         content: '';
         width: 100%;
         height: 3px;
@@ -189,17 +209,17 @@ p{
         position: absolute;
     }
 
-    .cont-line.line-active .line-item::after{
+    .cont-burger.line-active .line-burger::after{
         top: 0;
         transform: rotate(45deg);
         transition: top 300ms ease, transform 300ms 300ms ease;
     }
 
-    .cont-line.line-active .line-item{
+    .cont-burger.line-active .line-burger{
         background: transparent;
     }    
     
-    .cont-line.line-active .line-item::before{
+    .cont-burger.line-active .line-burger::before{
         bottom: 0;
         transform: rotate(-45deg);
         transition: bottom 300ms ease, transform 300ms 300ms ease;

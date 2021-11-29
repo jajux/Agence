@@ -1,8 +1,23 @@
-const HamburgerMenu = document.querySelector('.btn-burger');
-const Nav = document.querySelector('.nav-left');
-const NavLinks = document.querySelector('.nav-menu-item');
-const Line = document.querySelector('.cont-line');
+const hamburgerMenu = document.querySelector('.btn-burger');
+const nav = document.querySelector('.nav-left');
+const navLinks = document.querySelector('.nav-menu-item');
+const line = document.querySelector('.cont-burger');
 
-HamburgerMenu.addEventListener('click', ()=> {
-    Line.classList.toggle('line-active');
+hamburgerMenu.addEventListener('click', ()=> {
+    
+    line.classList.toggle('line-active');
+    nav.classList.toggle('menu-visible');
 })
+
+if (window.matchMedia('(max-width:1300px)')) {
+
+    navLinks.forEach(item => {
+
+        item.addEventListener('click', ()=> {
+            
+            nav.classList.toggle('menu-visible');
+            line.classList.toggle('line-active');
+        })
+    })
+}
+    
