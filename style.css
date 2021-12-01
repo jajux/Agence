@@ -391,7 +391,7 @@ h1 {
 @media screen and (max-width: 1000px) {
   .home {
     height: 700px;
-    /* min-height: 0; */
+    min-height: 0;
   }
   h1 {
     font-size: 3.3em;
@@ -455,5 +455,69 @@ h1 {
   }
   .home p {
     margin: 30px 0 0 5px;
+  }
+}
+
+/* ----------------------------Agence section---------------------------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-areas:
+    "grid-img1 grid-img2"
+    "grid-img3 grid-img4"
+    "grid-img5 grid-img6";
+  justify-items: stretch;
+  align-items: stretch;
+  height: 100vh;
+  min-height: 900px;
+  width: calc(100% - 300px);
+  margin-left: auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.grid-img1 {
+  grid-area: grid-img1;
+}
+
+.grid-img2 {
+  grid-area: grid-img2;
+}
+
+.grid-img3 {
+  grid-area: grid-img3;
+}
+
+.grid-img4 {
+  grid-area: grid-img4;
+}
+
+.grid-img5 {
+  grid-area: grid-img5;
+}
+
+.grid-img6 {
+  grid-area: grid-img6;
+}
+
+@media screen and (max-width: 1300px) {
+  .grid-container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "grid-img1 "
+      "grid-img2"
+      "grid-img3"
+      " grid-img4"
+      "grid-img5"
+      "grid-img6";
   }
 }
